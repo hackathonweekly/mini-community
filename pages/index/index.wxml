@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<view class="container">
+  <web-view src="{{webViewUrl}}" 
+    bindload="bindloadHandler" 
+    binderror="binderrorHandler"
+    bindmessage="bindmessageHandler">
+  </web-view>
+</view> 
