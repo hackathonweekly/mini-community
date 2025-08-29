@@ -5,9 +5,23 @@
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "WeeklyZen",
-        "navigationBarTextStyle": "black"
+        "navigationBarTitleText": "Hackathon Weekly",
+        "navigationBarTextStyle": "black",
+        "enablePullDownRefresh": false,
+        "backgroundColor": "#f8f9fa"
     },
+    "permission": {
+        "scope.userLocation": {
+            "desc": "你的位置信息将用于小程序位置接口的效果展示"
+        }
+    },
+    "requiredBackgroundModes": ["audio"],
+    "networkTimeout": {
+        "request": 10000,
+        "downloadFile": 10000
+    },
+    "debug": false,
     "style": "v2",
-    "sitemapLocation": "sitemap.json"
+    "sitemapLocation": "sitemap.json",
+    "lazyCodeLoading": "requiredComponents"
 }

@@ -1,6 +1,27 @@
 <!--index.wxml-->
 <view class="container">
-  <web-view src="{{webViewUrl}}" 
+  <!-- 加载状态提示 -->
+  <view class="loading-container" wx:if="{{isLoading}}">
+    <view class="loading-content">
+      <view class="loading-spinner"></view>
+      <text class="loading-text">正在加载 Hackathon Weekly...</text>
+    </view>
+  </view>
+  
+  <!-- 错误状态提示 -->
+  <view class="error-container" wx:if="{{hasError}}">
+    <view class="error-content">
+      <view class="error-icon">⚠️</view>
+      <text class="error-title">加载失败</text>
+      <text class="error-message">{{errorMessage}}</text>
+      <button class="retry-btn" bindtap="retryLoad">重新加载</button>
+    </view>
+  </view>
+  
+  <!-- WebView 组件 -->
+  <web-view 
+    wx:if="{{webViewUrl && !hasError}}"
+    src="{{webViewUrl}}" 
     bindload="bindloadHandler" 
     binderror="binderrorHandler"
     bindmessage="bindmessageHandler">
