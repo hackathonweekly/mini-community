@@ -129,8 +129,8 @@ Page({
   // 分享给朋友
   onShareAppMessage: function () {
     return {
-      title: 'Hackathon Weekly - 黑客松周刊',
-      desc: '发现最新的黑客松活动和技术资讯',
+      title: 'Hackathon Weekly - 周周黑客松',
+      desc: 'AI 产品创造者社区，在这里从 0 到 1 创造你的 MVP',
       path: '/pages/index/index'
     }
   },
@@ -138,7 +138,7 @@ Page({
   // 分享到朋友圈
   onShareTimeline: function () {
     return {
-      title: 'Hackathon Weekly - 黑客松周刊'
+      title: 'Hackathon Weekly - 周周黑客松'
     }
   }
 }) 
