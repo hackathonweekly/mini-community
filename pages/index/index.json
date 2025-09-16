@@ -1,4 +1,8 @@
 {
     "usingComponents": {},
-    "navigationBarTitleText": "WeeklyZen"
+    "navigationBarTitleText": "HackathonWeekly",
+    "enableShareAppMessage": true,
+    "enableShareTimeline": true,
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "dark"
 }

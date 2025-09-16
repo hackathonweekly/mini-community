@@ -2,9 +2,11 @@
 page {
     height: 100%;
     width: 100%;
+    background-color: #f8f9fa;
 }
 
-.container {
+/* 全局容器基础样式 */
+.global-container {
     height: 100%;
     width: 100%;
     display: flex;

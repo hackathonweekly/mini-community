@@ -104,7 +104,7 @@ wx.request({
 // 确认分享函数正确实现
 onShareAppMessage: function () {
   return {
-    title: 'Hackathon Weekly - 黑客松周刊',
+    title: 'Hackathon Weekly - 周周黑客松',
     desc: '发现最新的黑客松活动和技术资讯',
     path: '/pages/index/index'  // 确保路径正确
   }
@@ -113,7 +113,7 @@ onShareAppMessage: function () {
 // 检查分享到朋友圈功能
 onShareTimeline: function () {
   return {
-    title: 'Hackathon Weekly - 黑客松周刊'
+    title: 'Hackathon Weekly - 周周黑客松'
   }
 }
 ```

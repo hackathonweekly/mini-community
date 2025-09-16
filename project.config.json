@@ -43,8 +43,8 @@
     "useStaticServer": true
   },
   "compileType": "miniprogram",
-  "libVersion": "2.16.0",
-  "appid": "wxxxxxx",
+  "libVersion": "3.10.0",
+  "appid": "wxfd0f1ed463a6c89e",
   "projectname": "hackathon-weekly-miniprogram",
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
