@@ -9,6 +9,10 @@ Page({
   },
   
   onLoad: function () {
+    // 获取系统信息
+    const systemInfo = wx.getSystemInfoSync()
+    console.log('系统信息:', systemInfo)
+    
     // 页面加载时设置webview的URL
     this.setData({
       webViewUrl: app.globalData.webViewUrl,

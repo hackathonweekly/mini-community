@@ -109,4 +109,9 @@
 web-view {
     width: 100%;
     height: 100vh;
+    min-height: 100%;
+    /* 适配安全区域 */
+    height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+    /* 兼容旧版本 */
+    height: calc(100vh - constant(safe-area-inset-top) - constant(safe-area-inset-bottom));
 }

@@ -17,8 +17,10 @@
     },
     "requiredBackgroundModes": ["audio"],
     "networkTimeout": {
-        "request": 10000,
-        "downloadFile": 10000
+        "request": 30000,
+        "downloadFile": 30000,
+        "uploadFile": 30000,
+        "connectSocket": 30000
     },
     "debug": false,
     "style": "v2",

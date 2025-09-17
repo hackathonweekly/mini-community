@@ -3,5 +3,6 @@
   "projectname": "HackathonWeekly-WebView",
   "setting": {
     "compileHotReLoad": true
-  }
+  },
+  "libVersion": "3.9.2"
 }
