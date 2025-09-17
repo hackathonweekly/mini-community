@@ -5,17 +5,31 @@ Page({
     webViewUrl: '',
     isLoading: true,
     hasError: false,
-    errorMessage: ''
+    errorMessage: '',
+    currentUrl: ''
   },
   
-  onLoad: function () {
+  onLoad: function (options) {
     // 获取系统信息
     const systemInfo = wx.getSystemInfoSync()
     console.log('系统信息:', systemInfo)
     
+    // 检查是否有URL参数传递
+    let targetUrl = app.globalData.webViewUrl
+    if (options && options.url) {
+      try {
+        targetUrl = decodeURIComponent(options.url)
+        console.log('从分享链接获取URL:', targetUrl)
+      } catch (e) {
+        console.error('URL解码失败:', e)
+        targetUrl = app.globalData.webViewUrl
+      }
+    }
+    
     // 页面加载时设置webview的URL
     this.setData({
-      webViewUrl: app.globalData.webViewUrl,
+      webViewUrl: targetUrl,
+      currentUrl: targetUrl,
       isLoading: true,
       hasError: false
     })
@@ -113,8 +127,22 @@ Page({
         // 处理导航消息
         this.navigateToPage(message.data)
         break
+      case 'urlChange':
+        // 处理URL变化消息
+        this.updateCurrentUrl(message.url)
+        break
       default:
         console.log('未知消息类型:', message)
+    }
+  },
+  
+  // 更新当前URL
+  updateCurrentUrl: function(url) {
+    if (url && typeof url === 'string') {
+      this.setData({
+        currentUrl: url
+      })
+      console.log('URL已更新:', url)
     }
   },
   
@@ -131,11 +159,16 @@ Page({
   },
   
   // 分享给朋友
-  onShareAppMessage: function () {
+  onShareAppMessage: function (options) {
+    // options.webViewUrl 是微信原生提供的当前webview页面URL
+    const currentUrl = options.webViewUrl || this.data.currentUrl || app.globalData.webViewUrl
+    console.log('分享时的webViewUrl:', options.webViewUrl)
+    console.log('最终分享URL:', currentUrl)
+    
     return {
       title: 'Hackathon Weekly - 周周黑客松',
       desc: 'AI 产品创造者社区，在这里从 0 到 1 创造你的 MVP',
-      path: '/pages/index/index'
+      path: `/pages/index/index?url=${encodeURIComponent(currentUrl)}`
     }
   },
   
